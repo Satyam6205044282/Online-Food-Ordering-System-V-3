@@ -24,13 +24,17 @@ public class OnlineFoodOrderingSystemV3Application {
 		
 		
 		CustomerService  customerService = ctx.getBean(CustomerServiceImpl.class);
+		log.debug("customerService : {}",customerService);
+		
 		MenuServiceImpl  menuService = ctx.getBean(MenuServiceImpl.class);
+		log.debug("menuService : {}",menuService);	
+		
 		MenuTypeServiceImpl  menuTypeService = ctx.getBean(MenuTypeServiceImpl.class);
+		log.debug("menuTypeService : {}",menuTypeService);
+		
 		CartServiceImpl  cartService = ctx.getBean(CartServiceImpl.class);
-		log.debug("service : {}",customerService);
-		log.debug("service : {}",menuService);		
-		log.debug("service : {}",menuTypeService);
-		log.debug("service : {}",cartService);
+		log.debug("cartService : {}",cartService);
+		
 		
 		log.info("END");
 		
