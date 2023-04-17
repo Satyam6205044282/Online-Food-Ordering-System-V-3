@@ -42,63 +42,21 @@ public class Customer {
 	
 	@Column(name="account_status")
 	    private int accountStatus;
+	
+
+	public Customer(String customerFirstName, String customerLastName, String customerEmail, String customerPhoneNumber,String customerUsername, String customerPassword, int accountStatus) {
+		super();
+		this.customerFirstName = customerFirstName;
+		this.customerLastName = customerLastName;
+		this.customerEmail = customerEmail;
+		this.customerPhoneNumber = customerPhoneNumber;
+		this.customerUsername = customerUsername;
+		this.customerPassword = customerPassword;
+		this.accountStatus = accountStatus;
+	}
 	  
 	
-	public int getCustomerId() {
-		return customerId;
-	}
-
 	
-
-	public String getCustomerFirstName() {
-		return customerFirstName;
-	}
-
-	
-
-	public String getCustomerLastName() {
-		return customerLastName;
-	}
-
-	
-
-	public String getCustomerEmail() {
-		return customerEmail;
-	}
-
-	
-	
-	public String getCustomerPhoneNumber() {
-		return customerPhoneNumber;
-	}
-
-	
-
-	public String getCustomerUsername() {
-		return customerUsername;
-	}
-
-	
-
-	public String getCustomerPassword() {
-		return customerPassword;
-	}
-
-	
-	
-	public int getAccountStatus() {
-		return accountStatus;
-	}
-
-	
-
-	@Override
-	public String toString() {
-		return "Customer [customerId=" + customerId + ", customerFirstName=" + customerFirstName
-				+ ", customerLastName=" + customerLastName + ", customerEmail=" + customerEmail
-				+ ", customerPhoneNumber=" + customerPhoneNumber + ", customerUsername=" + customerUsername
-				+ ", customerPassword=" + customerPassword + ", accountStatus=" + accountStatus + "]";
-	}
 	
 	
 	
