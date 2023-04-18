@@ -16,15 +16,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name= "menu")
+@Table(name= "`menu`")
 public class Menu {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int menuId;
 	
-	@Column(name= "menu_name")
-    private String menuName;
+	
 	
 	@Column(name= "price")
     private float price;
@@ -35,9 +34,13 @@ public class Menu {
 	@JoinColumn(name = "menu_type_id")
 	private MenuType menuType;
 	
-	public Menu(String menuName, float price) {
+	@ManyToOne
+	@JoinColumn(name = "menu_name")
+	private Cart cart;
+	
+	
+	public Menu(float price) {
 		super();
-		this.menuName = menuName;
 		this.price = price;
 		
 	}

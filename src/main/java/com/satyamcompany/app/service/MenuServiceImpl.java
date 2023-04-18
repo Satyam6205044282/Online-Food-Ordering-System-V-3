@@ -7,11 +7,12 @@ import com.satyamcompany.app.dao.MenuRepository;
 import com.satyamcompany.app.model.Menu;
 
 @Service
-public class MenuServiceImpl {
+public class MenuServiceImpl implements MenuService{
 	
 	@Autowired
 	private MenuRepository repository;
 	
+	@Override
     public Menu create(Menu menu){
 		return repository.save(menu);
 	}

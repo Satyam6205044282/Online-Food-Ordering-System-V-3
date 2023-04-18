@@ -17,7 +17,7 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name= "menu-type")
+@Table(name= "`menu-type`")
 public class MenuType {
 	
 	@Id

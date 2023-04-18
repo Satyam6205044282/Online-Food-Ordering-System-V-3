@@ -7,11 +7,12 @@ import com.satyamcompany.app.dao.CartRepository;
 import com.satyamcompany.app.model.Cart;
 
 @Service
-public class CartServiceImpl {
+public class CartServiceImpl implements CartService{
 	
 	@Autowired
 	private CartRepository repository;
 	
+	@Override
 	public Cart create(Cart cart){
 		return repository.save(cart);
 	}

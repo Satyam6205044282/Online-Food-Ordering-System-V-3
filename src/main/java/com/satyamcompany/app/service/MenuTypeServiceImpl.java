@@ -6,11 +6,12 @@ import com.satyamcompany.app.dao.MenuTypeRepository;
 import com.satyamcompany.app.model.MenuType;
 
 @Service
-public class MenuTypeServiceImpl {
+public class MenuTypeServiceImpl implements MenuTypeService{
 	
 	@Autowired
 	private MenuTypeRepository repository;
 	
+	@Override
 	public MenuType create(MenuType menuType){
 		return repository.save(menuType);
 	}
