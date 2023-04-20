@@ -59,10 +59,6 @@ public class Customer {
 		this.customerPassword = customerPassword;
 		this.accountStatus = accountStatus;
 	}
-	  
-	
-	
-	
-	
+	  	
 	
 }

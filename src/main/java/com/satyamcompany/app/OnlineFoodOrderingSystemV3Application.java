@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.satyamcompany.app.model.Customer;
 import com.satyamcompany.app.service.CartService;
 import com.satyamcompany.app.service.CartServiceImpl;
 import com.satyamcompany.app.service.CustomerService;

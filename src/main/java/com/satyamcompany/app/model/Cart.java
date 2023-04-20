@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,10 +28,7 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	 private int cartId;
-	
-	
-	@Column(name= "menu_id")
-	    private int menuId;
+
 	
 	@Column(name= "menu_name")
     private String menuName;
@@ -49,13 +47,15 @@ public class Cart {
 	@JoinColumn(name = "customer_id")
 	private Order order;
 
-	@OneToMany(mappedBy = "cart")
-	private List<Menu> menu= new ArrayList<>();
+	@OneToOne(mappedBy = "cart")
+	@ManyToOne
+	@JoinColumn(name = "menu_id")
+	private Menu menu;
 	
 	    
-	    public Cart(int menuId, String menuName, float price, int quantity, float totalAmount) {
+	    public Cart(String menuName, float price, int quantity, float totalAmount) {
 			super();
-			this.menuId = menuId;
+		
 			this.menuName = menuName;
 			this.price = price;
 			this.quantity = quantity;
