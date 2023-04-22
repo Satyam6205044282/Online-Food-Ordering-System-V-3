@@ -28,17 +28,18 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer findById(int id) throws CustomerNotFoundException{
-		Optional<Customer>optional= repository.findById(id);
+	public Customer findById(int customer_id) throws CustomerNotFoundException{
+		Optional<Customer>optional= repository.findById(customer_id);
 		if(optional.isEmpty()) {
-		throw new CustomerNotFoundException("Customer Not Found By Id: " + id);
+		throw new CustomerNotFoundException("Customer Not Found By Id: " + customer_id);
 		}
 		return optional.get();
 	}
   
-	
-	public void deleteById(int id) {
-		repository.deleteById(id); 
+	@Override
+	public void deleteById(int customer_id)throws CustomerNotFoundException {
+		Customer customer= findById(customer_id);
+		repository.deleteById(customer_id); 
 	}
 }
 

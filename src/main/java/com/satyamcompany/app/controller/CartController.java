@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.satyamcompany.app.model.Customer;
-import com.satyamcompany.app.service.CustomerService;
+import com.satyamcompany.app.model.Cart;
+import com.satyamcompany.app.service.CartService;
 
 @RestController
-@RequestMapping("/customers")
-public class CustomerController {
-
+@RequestMapping("/carts")
+public class CartController {
+ 
 	@Autowired
-	private CustomerService customerService;
+	private CartService cartService;
 	
 	
 	/*
@@ -27,30 +27,30 @@ public class CustomerController {
 	 * @return
 	 */
 	@GetMapping
-	public List<Customer>findAll(){
-	return customerService.findAll();	
+	public List<Cart>findAll(){
+	return cartService.findAll();	
    }
 	
 	
 	@GetMapping("/{id}")
-	public 	Customer findById(@PathVariable("id")int customer_id) {
-		return customerService.findById(customer_id);
+	public 	Cart findById(@PathVariable("id")int cart_id) {
+		return cartService.findById(cart_id);
 		
 	}
 	
 	/*
 	 * Used to create the resources
-	 * parameter customer
-	 * return customer
+	 * parameter cart
+	 * return cart
 	 */
 	@PostMapping
-	public Customer create(@RequestBody Customer customer) {
-		return customerService.create(customer);
+	public Cart create(@RequestBody Cart cart) {
+		return cartService.create(cart);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void deleteById(@PathVariable("id")int customer_id) {   
-		customerService.deleteById(customer_id);
+	public void deleteById(@PathVariable("id")int cart_id) {   
+		cartService.deleteById(cart_id);
     }
 	
 }

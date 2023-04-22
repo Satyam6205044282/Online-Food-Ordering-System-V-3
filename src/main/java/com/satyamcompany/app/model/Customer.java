@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -45,8 +46,9 @@ public class Customer {
 	    private int accountStatus;
 	
 
-	@OneToOne(mappedBy= "customer")
-	private Order order;
+//	@OneToOne(mappedBy= "customer")
+//	private Order order;
+	
 	
 	
 	public Customer(String customerFirstName, String customerLastName, String customerEmail, String customerPhoneNumber,String customerUsername, String customerPassword, int accountStatus) {
