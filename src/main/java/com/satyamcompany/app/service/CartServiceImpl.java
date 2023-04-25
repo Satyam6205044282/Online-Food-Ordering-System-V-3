@@ -10,6 +10,7 @@ import com.satyamcompany.app.dao.CartRepository;
 import com.satyamcompany.app.exception.CartNotFoundException;
 import com.satyamcompany.app.model.Cart;
 
+
 @Service
 public class CartServiceImpl implements CartService{
 	
@@ -28,10 +29,10 @@ public class CartServiceImpl implements CartService{
 	}
 
 	@Override
-	public Cart findById(int cart_id) throws CartNotFoundException{
-		Optional<Cart>optional= repository.findById(cart_id);
+	public Cart findById(int customer_id) throws CartNotFoundException{
+		Optional<Cart>optional= repository.findById(customer_id);
 		if(optional.isEmpty()) {
-		throw new CartNotFoundException("Cart Not Found By Id: " + cart_id);
+		throw new CartNotFoundException("Cart Not Found By Customer Id: " + customer_id);
 		}
 		return optional.get();
 	}
@@ -40,5 +41,11 @@ public class CartServiceImpl implements CartService{
 	public void deleteById(int cart_id)throws CartNotFoundException {
 		Cart cart= findById(cart_id);
 		repository.deleteById(cart_id); 
+	}
+	
+	@Override
+	public Cart update(int cart_id, Cart newCart) throws CartNotFoundException{
+		Cart  cart=findById(cart_id);
+		return repository.save(newCart);
 	}
 }

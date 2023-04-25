@@ -14,4 +14,7 @@ public interface MenuTypeService {
 	public MenuType findByTypeName(String type_name)throws MenuTypeNotFoundException;
 
 
+
+
+
 }

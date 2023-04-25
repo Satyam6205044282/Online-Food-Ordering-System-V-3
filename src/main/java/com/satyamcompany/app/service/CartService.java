@@ -11,7 +11,11 @@ public interface CartService {
 	
 	public List<Cart>findAll();
 
-	public Cart findById(int cart_id)throws CartNotFoundException;
-	 
+	Cart findById(int customer_id) throws CartNotFoundException;
+	
 	public void deleteById(int cart_id)throws CartNotFoundException;
+
+	public Cart update(int cart_id, Cart cart);
+
+	
 }

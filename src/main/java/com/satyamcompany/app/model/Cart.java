@@ -44,19 +44,27 @@ public class Cart {
 	@JoinColumn(name = "customer_id")
 	private Order order;
 
+	
+	
 	@OneToOne(mappedBy = "cart")
 	@ManyToOne
 	@JoinColumn(name = "menu_id")
 	private Menu menu;
 	
 	    
-	    public Cart(String menuName, float price, int quantity, float totalAmount) {
+	    public Cart(String menuName, float price, int quantity, float totalAmount, Menu menu) {
 			super();
 		
 			this.menuName = menuName;
 			this.price = price;
 			this.quantity = quantity;
 			this.totalAmount = totalAmount;
+			this.menu = menu;
+		}
+
+
+		public Cart(int i, String string, double d, int j, double e, int k, int l) { 
+
 		}
 	
 }

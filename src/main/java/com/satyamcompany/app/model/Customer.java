@@ -42,16 +42,13 @@ public class Customer {
 	@Column(name="customer_password")
 	    private String customerPassword;
 	
-	@Column(name="account_status")
-	    private int accountStatus;
-	
 
 //	@OneToOne(mappedBy= "customer")
 //	private Order order;
 	
 	
 	
-	public Customer(String customerFirstName, String customerLastName, String customerEmail, String customerPhoneNumber,String customerUsername, String customerPassword, int accountStatus) {
+	public Customer(String customerFirstName, String customerLastName, String customerEmail, String customerPhoneNumber,String customerUsername, String customerPassword) {
 		super();
 		this.customerFirstName = customerFirstName;
 		this.customerLastName = customerLastName;
@@ -59,7 +56,6 @@ public class Customer {
 		this.customerPhoneNumber = customerPhoneNumber;
 		this.customerUsername = customerUsername;
 		this.customerPassword = customerPassword;
-		this.accountStatus = accountStatus;
 	}
 	  	
 	

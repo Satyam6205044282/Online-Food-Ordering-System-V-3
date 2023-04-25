@@ -14,4 +14,7 @@ public List<Customer>findAll();
 public Customer findById(int customer_id)throws CustomerNotFoundException;
  
 public void deleteById(int customer_id)throws CustomerNotFoundException;
+
+public Customer update(int customer_id, Customer customer);
+
 }

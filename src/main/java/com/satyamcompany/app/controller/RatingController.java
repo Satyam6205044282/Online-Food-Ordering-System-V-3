@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.satyamcompany.app.model.Rating;
 import com.satyamcompany.app.service.RatingService;
 
 @RestController
-@RequestMapping("/ratings")
+@RequestMapping("/api")
 public class RatingController {
 
 	@Autowired
@@ -22,13 +21,17 @@ public class RatingController {
 	
 	/*
 	 * Used to create the resources
-	 * parameter order
-	 * return order
+	 * parameter rating
+	 * return rating
 	 */
-	@PostMapping
+	@PostMapping("/v1/ratings")
 	public Rating create(@RequestBody Rating rating) {
 		return ratingService.create(rating);
 	}
 
+	@PostMapping("/ratings") 
+	public Rating createV1(@RequestBody Rating rating) {
+		return ratingService.create(rating);
+	}
 	
 }

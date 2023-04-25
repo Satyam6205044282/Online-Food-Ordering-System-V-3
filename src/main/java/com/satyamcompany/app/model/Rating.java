@@ -1,6 +1,5 @@
 package com.satyamcompany.app.model;
 
-
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
@@ -10,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,7 +27,7 @@ public class Rating {
 	@Column(name = "rating_id")
 	private int ratingId;
 	
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "menu_id")
 	private Menu menu;
 	
@@ -49,13 +49,14 @@ public class Rating {
 	
 	
 	
-	public Rating(int rate, String feedback, LocalDate dateRecorded) {
+	public Rating(int rate, String feedback, LocalDate dateRecorded, Menu menu, Customer customer) {
 		super();
-		
 	
 		this.rate = rate;
 		this.feedback = feedback;
 		this.dateRecorded = dateRecorded;
+		this.menu = menu;
+		this.customer = customer;
 	
 	}
 }
